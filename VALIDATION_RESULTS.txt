@@ -1,0 +1,272 @@
+V24 verification
+
+PASS: all 22 checks in tests/.
+Help accuracy (Chromium): for every topic, the screens it describes were opened as staff and as admin and every
+button and field name in the answer was found on screen: 152 names in 20 staff topics and 182 names in 24 admin
+topics, 0 missing. Each "Go to" button opens the right page. The checker also followed several answers to the end:
+recorded a product sale and a service sale, added stock, added a pet, booked an appointment, and changed a password.
+Statements were also checked: staff vaccinations, stock corrections, and sale reversals go to the admin; the
+attendance buttons appear after the visit time; one sale can hold products and services; the staff bell shows
+approvals and rejections.
+Layout: all 12 pages (Help with every answer open and with a search) at 14 sizes from 320 px phones to a 1920 px PC:
+0 problems. Pop-ups at 2 phone sizes: 0 problems. The search hint fits at every size.
+
+V23 verification
+
+PASS: all 22 checks in tests/.
+Chromium, 11 pages and every tab on each (including tabs that appear after switching, and the pet list view),
+at 19 sizes: phones 320x568, 360x740, 375x667, 390x844, 412x915, 430x932; sideways phones 667x375, 844x390,
+932x430; tablets 600x960, 768x1024, 800x1280, 820x1180, 1024x1366, 1024x768, 1180x820; laptops 1280x800 and
+1366x768; PC 1920x1080. 0 problems: no tall menu bar, no cut tabs or tab text, no sideways scrolling inside any
+table or box, no controls off screen, no table cell cut or missing its label, nothing sticking out of a card,
+no page sideways scrolling, no errors. Pop-up check (notifications, user menu, phone menu, chart tooltip, toast,
+7 dialogs) at 6 sizes: 0 problems. Laptops 1280 px and up show all 23 table views as normal tables.
+
+V22 verification
+
+PASS: all 22 checks in tests/.
+Chromium pop-up check at 24 sizes (6 portrait phones 320 to 430 px, 6 landscape phones, 9 tablets in portrait
+and landscape, 2 laptops, 1 PC): notification panel, user menu, phone menu, chart tooltip on the first, middle,
+and last dot, a long message toast, and the Add item, Review sale, Pet actions, Edit pet, Clinic stay, New
+appointment, and Review change dialogs are fully on screen, with titles and close buttons reachable. 0 problems.
+Page width: 13 pages at 20 sizes (260 page views) with no sideways scrolling and no uncaught errors.
+
+V21 verification
+
+PASS: all 22 checks in tests/.
+Chromium, 13 pages at 1920x1080, 1366x768, 1280x800, 1180x820, 820x1180, 768x1024, 390x844, 375x812,
+360x740, and 320x640: no sideways page scrolling, no stat amount split across lines, no uncaught errors.
+Phone menu: opens with all 9 admin links, closes with Escape, and links navigate. Tablet rail: tooltips
+and the Approvals badge present. Phone touch targets for toggles and tabs are at least 40 px tall.
+
+V20 verification
+
+PASS: all 22 checks in tests/ (check-workflows-browser.js now confirms History has only the By date view).
+Chromium at 1366 and 390 px: inventory tabs 18 px above and 16 px below with proposals, without proposals,
+and in the archived view; Products/Services toggle 14 px above and 16 px below; no sideways scrolling; no errors.
+
+V19 verification
+
+PASS: all 22 checks in tests/. check-workflows-browser.js was updated for the requested chart tooltip
+(date, income, number of sales; no product list or Close button; clicking outside closes it) and now also
+checks Record sales > History (sale numbers, products, quantities, day total, and the All sales table).
+Chromium: Add to order buttons line up in every row with no wrapping and no cut-off item codes at 1366,
+1024, 390, and 360 px; 18 px between the stat cards and Proposed changes; no sideways page scrolling on
+11 pages at those widths; no uncaught errors.
+
+V18 verification
+
+PASS: all 22 existing checks in tests/ (data and Chromium browser suites), unchanged.
+Checked in Chromium: no sideways page scrolling on 13 pages at 1366, 1024, 768, 390, and 360 px;
+inventory table fits its card at 1366 px; sales chart tooltip shows on real mouse hover, keyboard
+focus, and click, with the exact day total, sale count, item count, sale numbers, and products;
+no uncaught browser errors.
+
+V17 verification (October 14, 2026)
+
+PASS: check-project.js, check-v13-workflows.js,
+check-missed-vaccination.js, check-release-attendance.js,
+check-pet-profile-v16.js, check-clinic-due.js,
+check-v13-browser.js, check-clinic-due-browser.js.
+
+Verified latest approved clinical due dates, case-insensitive vaccine grouping,
+no writes/automatic bookings when reading reminders, pending then approved
+vaccine updates, approved checkup no-show reschedules, linked-booking
+suppression, cancellation/attendance and deceased suppression, reload.
+Browser: calendar due counts, overdue row and correct pet link, no fake
+appointment controls on due rows, staff approval before date changes,
+new future due date and persistence, existing actual booking workflows.
+Desktop and 375px mobile screenshots inspected; palette/layout retained;
+no horizontal document overflow or uncaught browser errors.
+git diff --check passed. No backend added.
+
+Earlier verification retained below:
+
+V16 verification (October 14, 2026)
+
+PASS: twelve data/static suites: check-project.js, check-archive.js,
+check-static-pages.js, check-feature-ids-deceased.js,
+check-death-date-validation.js, check-workflows.js,
+check-release-attendance.js, check-expired-stock.js, check-v13-workflows.js,
+check-missed-vaccination.js, check-loss-cost.js, check-pet-profile-v16.js.
+PASS: six Chromium browser suites: check-pet-browser.js,
+check-workflows-browser.js, check-release-attendance-browser.js,
+check-v13-browser.js, check-missed-vaccination-browser.js,
+check-pet-profile-v16-browser.js.
+
+V16: ordinary visit versus confinement, direct admission and promotion,
+profile/cards/list/clinic board status, staff/admin release and pickup,
+same-second stale release after confinement, deceased closure, separate
+clinical status/counts/history; pet-photo roles, validation and isolation,
+preview/cancel/save/remove, bad/oversized images, duplicate submit, storage
+quota failure rollback, audit and reload persistence.
+
+Profile buttons grouped/spaced; long record and owner/visit details expandable.
+Existing browser tests navigate relocated care buttons through Pet actions
+and expand history details before checking content; their behavior assertions
+are retained. Desktop and 375px mobile screenshots inspected. Picture sizing
+fits preview/profile/list frames; mobile document has no horizontal overflow.
+No uncaught browser errors. git diff --check passed. No backend added.
+
+Earlier verification retained below:
+
+V15 verification (October 14, 2026)
+
+PASS: check-project.js, check-v13-workflows.js,
+check-missed-vaccination.js, check-expired-stock.js, check-loss-cost.js,
+check-v13-browser.js, check-loss-cost-browser.js.
+
+Domain: three lost units at purchase unit cost 30 = 90; multiple unknown
+losses share their batch cost; remaining expired units receive known cost;
+archived/fully consumed batches supported; staff denied; invalid amounts,
+missing source/confirmation and duplicates blocked; other batches, quantities,
+archive state, selling prices, sales and receiving receipts unchanged.
+Audit metadata and costs persist on reload.
+Browser: archive -> record expired loss -> incomplete totals -> enter cost;
+cancel without changes; live preview, confirmation validation, duplicate submit;
+known total 90 after save/reload; staff cost tab/API restriction; mobile form
+and page fit without horizontal document overflow; no uncaught errors.
+Desktop/mobile screenshots inspected; existing design retained.
+git diff --check passed. No backend added.
+
+Earlier verification retained below:
+
+V14 verification (October 14, 2026)
+
+PASS: check-project.js, check-workflows.js, check-release-attendance.js,
+check-v13-workflows.js, check-missed-vaccination.js,
+check-release-attendance-browser.js, check-missed-vaccination-browser.js.
+
+Verified missed vaccination roles, staff approval/rejection, admin direct,
+duplicate/date/stale schedule guards, actual-dose history and overdue reminders
+unchanged, reschedule notes, visit count/last visit preservation and persistence.
+Browser: cancelled form leaves records unchanged; staff pending -> admin approval;
+distinct vaccination attendance card; duplicate blocked; mobile form visible,
+no document horizontal overflow; no uncaught errors. Desktop/mobile screenshots
+inspected. git diff --check passed. No backend added.
+
+Earlier verification retained below:
+
+V13 verification (October 14, 2026)
+
+PASS: nine data/static suites: check-project.js, check-archive.js,
+check-static-pages.js, check-feature-ids-deceased.js,
+check-death-date-validation.js, check-workflows.js,
+check-release-attendance.js, check-expired-stock.js,
+check-v13-workflows.js.
+PASS: five Chromium browser suites: check-pet-browser.js,
+check-workflows-browser.js, check-release-attendance-browser.js,
+check-expired-stock-browser.js, check-v13-browser.js.
+
+V13 checks cover mixed product/service billing; original batch traces;
+staff/admin full reversals; full refund confirmation; default-zero returns;
+unsafe/unverifiable returns, duplicates and permissions; atomic receiving;
+cost metadata and batch losses; controlled pet/owner edits and stale approval;
+appointment booking, rescheduling history, attendance and future guards;
+missed attendance approval/rejection and profile/calendar synchronization;
+separate physical stays, pickup, release, deceased closure; reload persistence
+and additive V12 migration preserving existing IDs/history/stock.
+
+Desktop and 375px mobile screenshots inspected for the clinic calendar,
+clinic board and receiving dialog. Existing green/pink styling retained.
+Browser suites report no uncaught page errors. git diff --check passed.
+
+These checks verify browser prototype behavior. Shared data, production
+permissions, payment processing and database transactions await the backend.
+
+Earlier version verification is retained below:
+
+V12 verification (October 14, 2026)
+
+PASS: eight data/static checks: check-project.js, check-archive.js,
+check-static-pages.js, check-feature-ids-deceased.js,
+check-death-date-validation.js, check-workflows.js,
+check-release-attendance.js, check-expired-stock.js.
+PASS: check-workflows-browser.js and check-expired-stock-browser.js.
+
+The new checks demonstrate that only past-expiry batches are archived;
+fresh stock, stock expiring today, no-expiry stock and other products are
+preserved. Archived quantities/metadata persist; active fresh stock remains
+sellable. Admin permissions, cancellation, duplicate guards, audit and
+all-expired product restore safety passed. Browser flows have no uncaught errors.
+
+Earlier version verification is retained below:
+
+V11 verification (October 14, 2026)
+
+PASS: all ten current checks, including the three Chromium browser suites.
+  check-project.js, check-archive.js, check-static-pages.js,
+  check-feature-ids-deceased.js, check-death-date-validation.js,
+  check-workflows.js, check-release-attendance.js,
+  check-pet-browser.js, check-workflows-browser.js,
+  check-release-attendance-browser.js.
+
+New release/attendance checks verified:
+- Staff requests remain pending until admin approval; admins finalize directly.
+- Release cancellation, recipient/date validation and duplicate confirmation guard.
+- Approval/rejection, required rejection notes and resubmission.
+- Pending reschedules preserve reminders; approved reschedules update the date.
+- Unrescheduled missed checkups remain visible as missed/overdue.
+- Completed-visit totals, last clinic visit, treatment status and earlier history preserved.
+- Future appointments, changed schedules and deceased-pet actions blocked.
+- Records persist after reload; new release forms work at a mobile viewport.
+- No uncaught browser errors during browser checks.
+
+PASS: migration using the actual V10 app.js and saved database. All existing
+records, IDs, users, sequence counters and other database fields preserved.
+
+Earlier version verification is retained below. Full manual regression and
+production/backend security are not claimed.
+
+V10 verification (October 14, 2026)
+
+PASS: tests/check-project.js — JavaScript parsing, local asset links and core sale checks.
+PASS: tests/check-workflows-browser.js — existing admin, sales, ID, item-code and chart workflows remain functional.
+PASS: targeted Chromium checks — one Grooming category option, working category filter, and upward chart details entirely inside 1280x720, 1024x600 and 375x667 viewports. Long details scroll inside their panel. No uncaught browser errors.
+
+Earlier V9 verification is retained below:
+
+Validation of the updated VetZone workflows (October 14, 2026)
+
+PASS: tests/check-project.js
+  13 application JavaScript files parsed; 59 local HTML asset links checked.
+  Seed data/helpers, sale recording, stock deduction, overselling rejection.
+PASS: tests/check-archive.js
+  Archive/restore, staff restriction, duplicate restore, batches and audit.
+PASS: tests/check-static-pages.js
+  Three converted static interfaces.
+PASS: tests/check-feature-ids-deceased.js
+  Role-specific ADM/STF IDs, item IDs, staff deceased request permissions,
+  approval/rejection, duplicate guards, audit and reminder suppression.
+PASS: tests/check-death-date-validation.js
+  Invalid calendar dates, pre-birth/future dates, valid boundaries/leap day;
+  bad saved requests blocked at approval without mutations and still rejectable.
+PASS: tests/check-workflows.js
+  Direct admin deceased recording; staff approval requirement; role ID changes;
+  migration, reload persistence and ID sequences; sale review without writes;
+  invalid/insufficient cash; exact cash/zero total; discounted change calculation;
+  changed-total guard; final stock deduction; online sales and saved cash data.
+PASS: tests/check-pet-browser.js
+  Staff/admin login and role views, ID rendering, staff deceased submission;
+  duplicate and permission guards, admin approval/rejection, rejection notes;
+  persistence, medical history preservation, reminder suppression;
+  deceased filters, all application pages, logout and no uncaught errors.
+  One visit dialog/record after repeated renders; pre-birth dates rejected.
+PASS: tests/check-workflows-browser.js
+  Admin direct deceased confirmation, cancellation, immediate status and reload.
+  Staff/admin profile ID prefixes; labeled inventory codes and code search.
+  Cash/online final sale review; cancellation without writes; cash validation;
+  live customer change; duplicate final submission creates only one sale;
+  stock/cash persistence; chart hover/focus/keyboard/date-range details.
+  Inventory code and sale confirmation visibility at a 375px mobile viewport.
+  No uncaught browser errors during these checks.
+
+PASS: migration using the actual previous release's app.js and saved data.
+  All products, batches, sales, pets, owners, records, inventory requests,
+  deceased requests and audit data preserved. Staff/item codes stay stable.
+  Only admin display prefixes and display-sequence metadata change.
+
+Browser checks used isolated profiles and blocked optional Google font
+requests, exercising the documented offline font fallback.
+Full manual checklist, every viewport/browser and production/backend security
+were not validated. This remains the browser-storage prototype in README.md.
